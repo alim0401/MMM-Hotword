@@ -7,6 +7,11 @@ You can use this module to wake another voice assistant or to give a command to 
 
 ### UPDATES
 
+**2.2.0 (2020-04-10)**
+- change owner and update package.json
+- update snowboy library [source](https://github.com/bugsounet/snowboy)
+- console log warning if problem with listener
+
 **2.1.0 (2020-01-13)**
 - Installer being updated. (Now it will check your dependencies and sound environment)
 - New recipe for `MMM-AssistantMk2 (v3)` being added.
@@ -20,17 +25,18 @@ You can use this module to wake another voice assistant or to give a command to 
 
 
 ### Installation
-Read [Wiki:install](https://github.com/eouia/MMM-Hotword/wiki/Installation)
+Read [Wiki:install](https://github.com/bugsounet/MMM-Hotword/wiki/Installation)
 
 ### (OPTIONAL) Get your personal model (.pmdl)
+
 Instead using universal model, You can make your own personal model. (ex. `Hey,Dude`, `volume up`, ...)
 
-Read [wiki:trainer](https://github.com/eouia/MMM-Hotword/wiki/Make-your-own-personal-model)
+Read [wiki:trainer](https://github.com/bugsounet/MMM-Hotword/wiki/Make-your-own-personal-model)
 - Personal model is dedicated to each specific vocal pattern. You cannot share your model with others.
 - Personal model should be created on target device and mic. It might not work on other device.
 
 ### Or.. For universal model (.umdl)
-Read [wiki:models](https://github.com/eouia/MMM-Hotword/wiki/Models)
+Read [wiki:models](https://github.com/bugsounet/MMM-Hotword/wiki/Models)
 
 
 
@@ -64,12 +70,3 @@ Read [wiki:models](https://github.com/eouia/MMM-Hotword/wiki/Models)
 - notification configurable. (You don't need `MMM-NotificationTrigger` any more for using with `MMM-AssistantMk2(^2.0.0)`)
 - But if you want more complex action chains, you can still use `MMM-NotificationTrigger` also.
 
-
-
-### Last Tested; (2019-05-19)
-- MagicMirror : v2.7.1
-- Tested Environment :
-  - Raspbian Stretch (Raspbian 3B+) / node v8.16.0 / npm v6.4.1
-  - TinkerOS (TinkerBoard)
-  - Ubuntu 18.04 (NVIDIA Jetson Nano)
-  - OSX 10.14.4 (Apple MacBookPro) / node v11.12.0 / npm v6.7.0
