@@ -48,37 +48,30 @@ fi
 # Check platform compatibility
 Installer_info "Checking OS..."
 Installer_checkOS
-if  [ "$platform" == "osx" ]; then
-  Installer_error "OS Detected: $OSTYPE ($os_name $os_version $arch)"
-  Installer_error "You need to do Manual Install"
-  exit 0
-else
+#if  [ "$platform" == "osx" ]; then
+#  Installer_error "OS Detected: $OSTYPE ($os_name $os_version $arch)"
+#  Installer_error "You need to do Manual Install"
+#  exit 0
+#else
   Installer_success "OS Detected: $OSTYPE ($os_name $os_version $arch)"
-fi
+#fi
 
 echo
 
-Installer_yesno "Do you want to execute automatic intallation ?" || exit 0
+#Installer_yesno "Do you want to execute automatic intallation ?" || exit 0
 
 # check dependencies
-dependencies=(libmagic-dev libatlas-base-dev sox libsox-fmt-all build-essential)
-Installer_info "Checking all dependencies..."
-Installer_check_dependencies
-Installer_success "All Dependencies needed are installed !"
+#dependencies=(libmagic-dev libatlas-base-dev sox libsox-fmt-all build-essential)
+#Installer_info "Checking all dependencies..."
+#Installer_check_dependencies
+#Installer_success "All Dependencies needed are installed !"
 
 # install snowboy
 echo
-Installer_info "Snowboy"
+Installer_info "Snowboy [dev-test]"
+echo
 Hotword_CloneSB
 Hotword_InstSB
-
-echo
-# all is ok than electron-rebuild
-Installer_info "Electron Rebuild"
-Installer_yesno "Do you want to execute electron rebuild" && (
-  Hotword_Electron
-  Installer_success "Electron Rebuild Complete!"
-)
 
 echo
 #check installation

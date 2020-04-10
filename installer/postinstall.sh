@@ -25,10 +25,10 @@ source utils.sh
 source hotword.sh
 
 # del last log
-rm installer.log 2>/dev/null
+#rm installer.log 2>/dev/null
 
 # logs in installer.log file
-Installer_log
+#Installer_log
 
 # check version
 Installer_version="$(cat ../package.json | grep version | cut -c15-19 2>/dev/null)"
@@ -43,33 +43,33 @@ if [ "$EUID" -eq 0 ]; then
 fi
 
 # Check platform compatibility
-Installer_checkOS
-if  [ "$platform" == "osx" ]; then
-  exit 0
-fi
+#Installer_checkOS
+#if  [ "$platform" == "osx" ]; then
+#  exit 0
+#fi
 
-echo
+#echo
 
 # Audio out/in checking
-Installer_info "Checking Speaker and Microphone..."
-Installer_yesno "Do you want check your audio configuration" && (
-  Installer_checkaudio
-  echo
-  Installer_checkmic
-  echo
+#Installer_info "Checking Speaker and Microphone..."
+#Installer_yesno "Do you want check your audio configuration" && (
+#  Installer_checkaudio
+#  echo
+#  Installer_checkmic
+#  echo
 
-  if [ ! -z "$plug_rec" ]; then
-    Installer_warning "This is your Hotword mic working configuration :"
-    if [ "$os_name" == "raspbian" ]; then
-      Installer_warning "Remember: if you are using RPI, it's better to use arecord program"
-    fi
-    echo
-    Installer_warning "mic: {"
-    Installer_warning "  recordProgram: \"arecord\","
-    Installer_warning "  device: \"$plug_rec\""
-    Installer_warning "},"
-  fi
-)
+#  if [ ! -z "$plug_rec" ]; then
+#    Installer_warning "This is your Hotword mic working configuration :"
+#    if [ "$os_name" == "raspbian" ]; then
+#      Installer_warning "Remember: if you are using RPI, it's better to use arecord program"
+#    fi
+#    echo
+#    Installer_warning "mic: {"
+#    Installer_warning "  recordProgram: \"arecord\","
+#    Installer_warning "  device: \"$plug_rec\""
+#    Installer_warning "},"
+#  fi
+#)
 
 echo
 
