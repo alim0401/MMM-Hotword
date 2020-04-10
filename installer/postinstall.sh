@@ -48,7 +48,7 @@ if  [ "$platform" == "osx" ]; then
   exit 0
 fi
 
-echo
+#echo
 
 # Audio out/in checking
 Installer_info "Checking Speaker and Microphone..."

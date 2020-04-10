@@ -102,7 +102,7 @@ class LPCM16 {
     this.cp.stderr.on('data', (data) => {
       var dataToString = data.toString()
       if (dataToString.search("WARN" > -1)) {
-        return
+        return console.log('[HOTWORD:LPCM16]', data.toString())
       } else {
         this.stream.destroy()
         return this.afterCallback(data.toString())
