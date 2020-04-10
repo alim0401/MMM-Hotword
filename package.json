@@ -21,6 +21,10 @@
     "bugsounet"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bugsounet/MMM-Hotword"
+  },
   "bugs": {
     "url": "https://github.com/bugsounet/MMM-Hotword/issues"
   }

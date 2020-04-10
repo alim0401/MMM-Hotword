@@ -8,9 +8,9 @@
 
 Hotword_CloneSB() {
   cd ..
-  Installer_info "Cloning Snowboy@bugsounet (dev) from Github..."
+  Installer_info "Cloning Snowboy@bugsounet from Github..."
   rm -rf snowboy
-  git clone -b dev https://github.com/bugsounet/snowboy.git
+  git clone https://github.com/bugsounet/snowboy.git
   cd snowboy
   Installer_info "Copying Snowboy models..."
   cp -r resources/models ..
