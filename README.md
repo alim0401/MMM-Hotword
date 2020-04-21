@@ -7,6 +7,14 @@ You can use this module to wake another voice assistant or to give a command to 
 
 ### UPDATES
 
+**2.3.0 (2020-04-22)**
+- use my new npm [snowboy library](https://www.npmjs.com/package/@bugsounet/snowboy)
+- update code for apply
+- installer update
+- new npm function:
+    * `npm run update`: auto update MMM-Hotword
+    * `npm run rebuild`: rebuild MMM-Hotword like a fresh installation
+
 **2.2.0 (2020-04-10)**
 - change owner and update package.json
 - update snowboy library [source](https://github.com/bugsounet/snowboy)
@@ -17,15 +25,23 @@ You can use this module to wake another voice assistant or to give a command to 
 - New recipe for `MMM-AssistantMk2 (v3)` being added.
 
 
-
-
-#### How to update (From previous version 1.X)
-- You need to remove old MMM-Hotword directory then re-install from scratch again.
-- Configuration should be re-written. It is not compatible with old version.
-
-
 ### Installation
 Read [Wiki:install](https://github.com/bugsounet/MMM-Hotword/wiki/Installation)
+
+### Update from 2.x.x to 2.3.0
+updater is not inclued, so you have to do this command:
+```sh
+cd ~/MagicMirror/modules/MMM-Hotword
+rm -f package.json package-lock.json
+git pull
+npm run rebuild
+```
+
+### Update from 2.3.x to lasted
+```sh
+cd ~/MagicMirror/modules/MMM-Hotword
+npm run update
+```
 
 ### (OPTIONAL) Get your personal model (.pmdl)
 
@@ -37,7 +53,6 @@ Read [wiki:trainer](https://github.com/bugsounet/MMM-Hotword/wiki/Make-your-own-
 
 ### Or.. For universal model (.umdl)
 Read [wiki:models](https://github.com/bugsounet/MMM-Hotword/wiki/Models)
-
 
 
 ### UPDATE HISTORY
