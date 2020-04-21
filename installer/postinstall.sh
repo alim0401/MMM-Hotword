@@ -23,12 +23,6 @@ cd "$Installer_dir"
 
 source utils.sh
 
-# del last log
-rm installer.log 2>/dev/null
-
-# logs in installer.log file
-Installer_log
-
 # check version
 Installer_version="$(cat ../package.json | grep version | cut -c15-19 2>/dev/null)"
 
