@@ -8,8 +8,8 @@ const path = require("path")
 const exec = require("child_process").exec
 const Record = require("./components/lpcm16.js")
 const B2W = require("./components/b2w.js")
-const Detector = require("./snowboy/lib/node/index.js").Detector
-const Models = require("./snowboy/lib/node/index.js").Models
+const Detector = require("@bugsounet/snowboy").Detector
+const Models = require("@bugsounet/snowboy").Models
 const fs = require("fs")
 
 var NodeHelper = require("node_helper")
@@ -110,7 +110,7 @@ module.exports = NodeHelper.create({
       models.add(model)
     })
     this.detector = new Detector({
-      resource: path.resolve(__dirname, "snowboy/resources/common.res"),
+      resource: path.resolve(__dirname, "resources/common.res"),
       models: models,
       audioGain: this.config.detectorAudioGain,
       applyFrontend: this.config.detectorApplyFrontend

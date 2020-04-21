@@ -22,7 +22,6 @@ Installer_dir="$(Installer_get_current_dir)"
 cd "$Installer_dir"
 
 source utils.sh
-source hotword.sh
 
 # del last log
 rm installer.log 2>/dev/null
@@ -35,7 +34,6 @@ Installer_version="$(cat ../package.json | grep version | cut -c15-19 2>/dev/nul
 
 # Let's start !
 Installer_info "Welcome to Hotword v$Installer_version"
-Installer_info "preinstall script v$Installer_vinstaller"
 
 echo
 
@@ -66,15 +64,5 @@ Installer_info "Checking all dependencies..."
 Installer_check_dependencies
 Installer_success "All Dependencies needed are installed !"
 
-# install snowboy
 echo
-Installer_info "Snowboy"
-echo
-Hotword_CloneSB
-Hotword_InstSB
-
-echo
-#check installation
-Hotword_CheckSB
-
-echo
+Installer_info "Installing @bugsounet/snowboy"
