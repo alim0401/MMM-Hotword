@@ -1,11 +1,13 @@
 {
   "name": "MMM-Hotword",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "A simple hotword(wake word) detector module for MagicMirror with Snowboy",
   "main": "MMM-Hotword.js",
   "scripts": {
     "preinstall": "installer/preinstall.sh",
-    "postinstall": "installer/postinstall.sh"
+    "postinstall": "installer/postinstall.sh",
+    "update" : "installer/update.sh",
+    "rebuild": "installer/rebuild.sh"
   },
   "keywords": [
     "magic mirror",
@@ -27,5 +29,8 @@
   },
   "bugs": {
     "url": "https://github.com/bugsounet/MMM-Hotword/issues"
+  },
+  "dependencies": {
+    "@bugsounet/snowboy": "^1.4.3"
   }
 }

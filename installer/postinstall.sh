@@ -22,13 +22,6 @@ Installer_dir="$(Installer_get_current_dir)"
 cd "$Installer_dir"
 
 source utils.sh
-source hotword.sh
-
-# del last log
-rm installer.log 2>/dev/null
-
-# logs in installer.log file
-Installer_log
 
 # check version
 Installer_version="$(cat ../package.json | grep version | cut -c15-19 2>/dev/null)"
@@ -42,13 +35,16 @@ if [ "$EUID" -eq 0 ]; then
   exit 1
 fi
 
+Installer_info "Copying models and common resources"
+cp -r ../node_modules/@bugsounet/snowboy/resources/models ../
+cp ../node_modules/@bugsounet/snowboy/resources/common.res ../resources/
+echo
+
 # Check platform compatibility
 Installer_checkOS
 if  [ "$platform" == "osx" ]; then
   exit 0
 fi
-
-#echo
 
 # Audio out/in checking
 Installer_info "Checking Speaker and Microphone..."
